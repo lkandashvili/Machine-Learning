@@ -22,12 +22,12 @@ documents = ["This little kitty came to play when I was eating at a restaurant."
 
 vectorizer = TfidfVectorizer(stop_words='english')
 X = vectorizer.fit_transform(documents)
-true_k = 2
+true_k = 6
 
 model = KMeans(n_clusters=true_k, init='k-means++', max_iter=100, n_init=1)
 model.fit(X)
 
-Y = vectorizer.transform(["I love cats."])
+Y = vectorizer.transform(["I like this Google Chrome extension."])
 prediction = model.predict(Y)
 print(prediction)
 
